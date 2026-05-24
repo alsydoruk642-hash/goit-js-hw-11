@@ -8,11 +8,15 @@
 @import url('./reset.css');
 @import url('./base.css');
 
-/* Component styles */
+/* !! FORM */
 .form {
   margin-top: 36px;
+
   display: flex;
+  justify-content: center;
   gap: 8px;
+
+  margin-bottom: 32px;
 }
 .search-input {
   display: flex;
@@ -20,7 +24,7 @@
   border: 1px solid #808080;
   border-radius: 4px;
   width: 272px;
-  height: 22px;
+  height: 40px;
   padding: 8px 16px;
   transition: 300ms ease-in-out;
 }
@@ -62,4 +66,104 @@
 
 .search-button:hover {
   background-color: #6c8cff;
+}
+
+/* !! Loader */
+.loader {
+  width: 48px;
+  height: 48px;
+
+  border: 5px solid #ccc;
+  border-bottom-color: #4e75ff;
+  border-radius: 50%;
+
+  display: none;
+
+  animation: rotation 1s linear infinite;
+
+  margin: 20px auto;
+}
+
+.loader.is-visible {
+  display: block;
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* !! GALLERY */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 24px;
+
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-item {
+  width: 360px;
+
+  border: 1px solid #808080;
+
+  background-color: #fff;
+
+  overflow: hidden;
+}
+
+.gallery-item a {
+  display: block;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 250ms ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.03);
+}
+
+/* !! INFO */
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 4px 20px;
+}
+
+.info p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+
+  color: #2e2f42;
+}
+
+.info b {
+  margin-bottom: 4px;
+
+  font-weight: 600;
 }
